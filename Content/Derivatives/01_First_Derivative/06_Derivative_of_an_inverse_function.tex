@@ -1,0 +1,35 @@
+\section{映射复合意义下函数的反函数的导数}
+
+记号约定:$I,J$是$\R$中的非退化区间,$f\in\Isom_{\mathsf{Top}}\left(I,J\right),g=f^{-1}$.
+
+\begin{proposition}{}{}
+	设$x_{0}\in I$.若$f$在$x_{0}$处可微,$f^{\prime}\left(x_{0}\right)\neq 0$,则$g$在$f\left(x_{0}\right)$处可微,并且$g^{\prime}\left(f\left(x_{0}\right)\right)=\left(f^{\prime}\left(x_{0}\right)\right)^{-1}$.
+\end{proposition}
+
+\begin{sketch}{}{}
+	记$y_{0}=f\left(x_{0}\right)$.由$f$是同胚知道$g^{-1}$连续,因此$\limit_{\substack{y\to y_{0}\\ y\in J\setminus\left\{y_{0}\right\}}}g\left(y\right)=g\left(y_{0}\right)=x_{0}$.对每个$y\in J\setminus\left\{y_{0}\right\}$,成立
+	\begin{align*}
+		\frac{g\left(y\right)-g\left(y_{0}\right)}{y-y_{0}}=\left(\frac{f\left(g\left(y\right)\right)-f\left(x_{0}\right)}{g\left(y\right)-x_{0}}\right)^{-1}.
+	\end{align*}
+	结合$f$在$x_{0}$处可微和$f^{\prime}\left(x_{0}\right)\neq 0$,利用$g$的连续性与$g^{\prime}\left(y_{0}\right)$的定义就得到结果.
+\end{sketch}
+
+\begin{corollary}{}{}
+	如果$f$在$I$上可微,在$I$上各点的导数都$\neq 0$,那么$g$在$J$上可微,并且对每个$y\in J$有$g^{\prime}\left(y\right)=\left(f^{\prime}\left(g\left(y\right)\right)\right)^{-1}$.
+\end{corollary}
+
+\begin{example}{正整数次幂函数和整有理数次幂函数的导函数}{}
+	\begin{enumerate}
+		\item 对每个$n>0$,映射$f_{n}:\R_{>0}\to\R_{>0},x\mapsto x^{n}$的逆映射$g_{n}$可微,并且对每个$x\in\R_{>0}$有$g_{n}^{\prime}\left(x\right)=\frac{1}{n}x^{\frac{1}{n}-1}$.
+		\item 对每个$r\in\Q_{>0}$,映射$g_{n}:\R_{>0}\to\R_{>0},x\mapsto x^{r}$可微,并且对每个$x\in\R_{>0}$有$g_{r}^{\prime}\left(x\right)=rx^{r-1}$.
+	\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+

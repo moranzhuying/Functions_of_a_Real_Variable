@@ -1,0 +1,62 @@
+\section{实值函数的导数}
+
+记号约定:$I$是$\R$中的非退化区间.
+
+\begin{definition}{实值函数的导数}{}
+	设$x_{0}\in I,f\in\Hom_{\mathsf{Set}}\left(I,\overline{\R}\right)$.
+	\begin{enumerate}
+		\item 若$\limit_{\substack{x\to x_{0}\\ x\in I\setminus\left\{x_{0}\right\}}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}}=+\infty$,则称$f$在$x_{0}$处的导数为$+\infty$.
+		\item 若$\limit_{\substack{x\to x_{0}\\ x\in I\setminus\left\{x_{0}\right\}}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}}=-\infty$,则称$f$在$x_{0}$处的导数为$-\infty$.
+		\item 若$f$在$I$上的每一点都有导数,则称$f$在$I$上可导,称$I\to\overline{\R},x\mapsto\limit_{\substack{x\to x_{0}\\ x\in I\setminus\left\{x_{0}\right\}}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}}$为$f$的导函数,记作$f^{\prime},f^{\left(1\right)}$或$Df$.
+		\item 若$I\cap\left(-\infty,x_{0}\right]$非退化,$f|_{I\cap\left(-\infty,x_{0}\right]}$在$x_{0}$处的导数为$+\infty$(或$-\infty$),则称$f$在$x_{0}$处左可微,称$+\infty$(或$-\infty$)是$f$在$x_{0}$处的左导数,将其记作$f_{s}^{\prime}\left(x_{0}\right)$.
+		\item 若$I\cap\left[+\infty,x_{0}\right)$非退化,$f|_{I\cap\left[+\infty,x_{0}\right)}$在$x_{0}$处的导数为$+\infty$(或$-\infty$),则称$f$在$x_{0}$处右可微,称$+\infty$(或$-\infty$)是$f$在$x_{0}$处的右导数,将其记作$f_{d}^{\prime}\left(x_{0}\right)$.
+		\item 若$I\cap\left(-\infty,x_{0}\right]$非退化,$f$在$I\cap\left(-\infty,x_{0}\right]$上各点都左可微,则称$f_{s}^{\prime}:I\to\overline{\R},x\mapsto f_{s}^{\prime}\left(x\right)$是$f$的左导函数.
+		\item 若$I\cap\left[x_{0},+\infty\right)$非退化,$f$在$I\cap\left[+\infty,x_{0}\right)$上各点都右可微,则称$f_{d}^{\prime}:I\to\overline{\R},x\mapsto f_{d}^{\prime}\left(x\right)$是$f$的右导函数.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}{}{}
+	只要$\overline{\R}$中的运算有意义,那么有限实值函数的求导法则(和,乘积,逐点逆,复合函数,反函数)对实值函数仍然成立.
+\end{remark}
+
+\begin{definition}{左切线,右切线}{}
+	设$f\in\Hom_{\mathsf{Set}}\left(I,\R\right),x_{0}\in I,C=\Gr\left(f\right),M_{x_{0}}=\left(x_{0},f\left(x_{0}\right)\right)$.
+	\begin{enumerate}
+		\item 若$f_{s}^{\prime}\left(x_{0}\right)$存在且有限,则称以$M_{x_{0}}$为起点,方向为$\left(1,f_{s}^{\prime}\left(x_{0}\right)\right)$的射线为$C$在点$M_{x_{0}}$处的左半切线.
+		\item 若$f_{s}^{\prime}\left(x_{0}\right)=+\infty$,则称以$M_{x_{0}}$为起点,方向为$\left(0,1\right)$的射线为$C$在点$M_{x_{0}}$处的左半切线.
+		\item 若$f_{s}^{\prime}\left(x_{0}\right)=-\infty$,则称以$M_{x_{0}}$为起点,方向为$\left(0,-1\right)$的射线为$C$在点$M_{x_{0}}$处的左半切线.
+		\item 若$f_{d}^{\prime}\left(x_{0}\right)$存在且有限,则称以$M_{x_{0}}$为起点,方向为$\left(1,f_{d}^{\prime}\left(x_{0}\right)\right)$的射线为$C$在点$M_{x_{0}}$处的右半切线.
+		\item 若$f_{d}^{\prime}\left(x_{0}\right)=+\infty$,则称以$M_{x_{0}}$为起点,方向为$\left(0,1\right)$的射线为$C$在点$M_{x_{0}}$处的右半切线.
+		\item 若$f_{d}^{\prime}\left(x_{0}\right)=-\infty$,则称以$M_{x_{0}}$为起点,方向为$\left(0,-1\right)$的射线为$C$在点$M_{x_{0}}$处的右半切线.
+		\item 设$C$在点$M_{x_{0}}$处的左半切线和右半切线都存在.如果下列条件之一成立:
+		\begin{itemize}
+			\item $M_{x_{0}}$处的左半切线和右半切线的方向相反(等价地,$x\in\interior\left(I\right)$且$f$在$x_{0}$处存在导数);
+			\item $M_{x_{0}}$处的左半切线和右半切线相同(等价地,$f_{s}^{\prime}\left(x_{0}\right),f_{d}^{\prime}\left(x_{0}\right)\in\left\{-\infty,+\infty\right\}$且$f_{s}^{\prime}\left(x_{0}\right)=-f_{d}^{\prime}\left(x_{0}\right)$),
+		\end{itemize}
+		则称$\R^{2}$中包含点$M_{x_{0}}$处的左半切线和右半切线的直线为$C$在$M_{x_{0}}$处的切线.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}{局部极值,严格局部极值}{}
+	设$X$是拓扑空间,$A$是$X$的拓扑子空间,$f\in\Hom_{\mathsf{Set}}\left(A,\overline{\R}\right),x_{0}\in E$.
+	\begin{enumerate}
+		\item 若存在$x_{0}$在$E$中的邻域$V$,对每个$x\in\left(V\setminus\left\{x_{0}\right\}\right)\cap A$有$f\left(x\right)\leq f\left(x_{0}\right)$,则称$x_{0}$是$f$在$A$中的局部极大值点,$f\left(x_{0}\right)$为$f$在$A$上的局部极大值.
+		\item 若存在$x_{0}$在$E$中的邻域$V$,对每个$x\in\left(V\setminus\left\{x_{0}\right\}\right)\cap A$有$f\left(x\right)<f\left(x_{0}\right)$,则称$x_{0}$是$f$的局部极大值点,$f\left(x_{0}\right)$为$f$的严格局部极大值.
+		\item 若$x_{0}$是$-f$的局部极大值点,则称$x_{0}$是$f$在$A$中的局部极小值点,$f\left(x_{0}\right)$为$f$在$A$上的局部极小值.
+		\item 若$x_{0}$是$-f$的严格局部极大值点,则称$x_{0}$是$f$在$A$中的严格局部极小值点,$f\left(x_{0}\right)$为$f$在$A$上的严格局部极大值.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}{Fermat引理}{}
+	设$f\in\Hom_{\mathsf{Set}}\left(I,\R\right),x_{0}\in\interior\left(I\right)$.
+	\begin{enumerate}
+		\item 若$x_{0}$是$f$在$I$中的局部极小值点,$f$在$x_{0}$处左可微和右可微,则$f_{s}^{\prime}\left(x_{0}\right)\geq 0,f_{d}^{\prime}\left(x_{0}\right)\leq 0$.
+		\item 若$x_{0}$是$f$在$I$中的局部极大值点,$f$在$x_{0}$处左可微和右可微,则$f_{s}^{\prime}\left(x_{0}\right)\leq 0,f_{d}^{\prime}\left(x_{0}\right)\geq 0$.
+		\item 若$x_{0}$是$f$在$I$中的局部极小值点或极大值点,$f$在$x_{0}$处可微,则$f^{\prime}\left(x_{0}\right)\geq 0$.
+	\end{enumerate}
+\end{proposition}
+
+
+
+
+

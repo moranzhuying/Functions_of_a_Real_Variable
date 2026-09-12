@@ -1,0 +1,102 @@
+\chapter{一阶导数}
+
+\begin{definition}{实向量值函数}{}
+	设$E$是Hausdorff的实TVS,$D\subseteq\R$.我们称$\Hom_{\mathsf{Set}}\left(D,\R\right)$的元素为$\R$-向量值函数(或实向量值函数).
+\end{definition}
+
+\begin{remark}{}{}
+	本章中所陈述的许多定义和性质,都可推广到定义在$\C$的某个子集,并取值于某个复TVS的函数,有些定义和性质,甚至可推广到定义在任意拓扑域$K$的某个子集,并取值于某个$K$-TVS的函数.
+	
+	我们将在适当处指出这些推广,并尤其着重于复变量函数这一情形.复变量函数与实变量函数一起,是迄今最重要的函数,将在《微分流形与解析流形》中作更深入的研究.
+\end{remark}
+
+\begin{convention}{}{}
+	本书中,域$K$上的向量空间$V$的元素通常用粗体小写字母表示(例如$\mathbf{a}$),标量则用罗马体小写字母表示(例如$a$).在向量$\mathbf{x}$与标量$t$的乘积中,我们通常把标量$t$放在右边,将乘积写作$\mathbf{x}t$;某些情况下使用左记号 $t\mathbf{x}$更为方便,此时我们也会使用这种记法;此外,有时我们将标量$\frac{1}{t}$($t\neq 0$)与向量$\mathbf{x}$的乘积写成$\frac{\mathbf{x}}{t}$的形式.
+\end{convention}
+
+\section{向量值函数的导数}
+
+记号约定:$I$是$\R$中的非退化区间,$E$是Hausdorff的实TVS,$\mathbf{f}\in\Hom_{\mathsf{Set}}\left(I,E\right)$.
+
+\begin{definition}{向量值函数在某一点的导数}{}
+	设$x_{0}\in I$.若$\limit_{\substack{x\to x_{0}\\ x\in I\setminus\left\{x_{0}\right\}}}\frac{\mathbf{f}\left(x\right)-\mathbf{f}\left(x_{0}\right)}{x-x_{0}}$存在,则称之为$\mathbf{f}$在$x_{0}$处的(一阶)导数,记作$\mathbf{f}^{\prime}\left(x_{0}\right),\mathbf{f}^{\left(1\right)}\left(x_{0}\right)$或$D\mathbf{f}\left(x_{0}\right)$,称函数$\mathbf{f}$在$x_{0}$处可微.
+\end{definition}
+
+\begin{proposition}{导数是局部概念}{}
+	设$x_{0}\in I$.
+	\begin{enumerate}
+		\item 如果$\mathbf{f}$在$x_{0}$处可微,那么对$I$包含的每个非退化区间$J$,映射$\mathbf{f}|_{J}$在$x_{0}$处可微,导数为$\mathbf{f}^{\prime}\left(x_{0}\right)$.
+		\item 如果$J$是$I$包含的区间,它包含了$x_{0}$在$I$中的一个邻域,并且$\mathbf{f}|_{J}$在$x_{0}$处可微,那么$\mathbf{f}$在$x_{0}$处也可微.
+	\end{enumerate}
+\end{proposition}
+
+\begin{remark}{}{}
+	如果$\mathbf{f}$在$x_{0}$处可微,那么$\mathbf{f}$相对$I$在$x_{0}$处连续.
+\end{remark}
+
+\begin{definition}{左导数,右导数}{}
+	设$x_{0}\in I$.
+	\begin{enumerate}
+		\item 若$I\cap\left(-\infty,x_{0}\right]$非退化,$\mathbf{f}|_{I\cap\left(-\infty,x_{0}\right]}$在$x_{0}$处可微,则称其导数为$\mathbf{f}$在$x_{0}$处的左导数,记作$\mathbf{f}_{s}^{\prime}\left(x_{0}\right)$,称$\mathbf{f}$在$x_{0}$处左可微.
+		\item 若$I\cap\left[x_{0},+\infty\right)$非退化,$\mathbf{f}|_{I\cap\left[x_{0},+\infty\right)}$在$x_{0}$处可微,则称其导数为$\mathbf{f}$在$x_{0}$处的右导数,记作$\mathbf{f}_{d}^{\prime}\left(x_{0}\right)$,称$\mathbf{f}$在$x_{0}$处右可微.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}{左右导数和导数的关系}{}
+	设$x_{0}\in\interior\left(I\right)$,则$f$在$x_{0}$处可微$\iff$ $f$在$x_{0}$处左可微和右可微,并且$f_{s}^{\prime}\left(x_{0}\right)=f_{d}^{\prime}\left(x_{0}\right)$.两条件之一成立时,
+	\begin{align*}
+		f^{\prime}\left(x_{0}\right)=f_{s}^{\prime}\left(x_{0}\right)=f_{d}^{\prime}\left(x_{0}\right).
+	\end{align*}
+\end{proposition}
+
+\begin{example}{常见函数的导数,不可微函数的例子}{}
+	\begin{enumerate}
+		\item $I$到$E$的常值函数在$I$上各点都可微,并且导数为$0$.
+		\item 仿射函数$I\to E,x\mapsto \mathbf{a}x+\mathbf{b}$在$I$上各点都可微,并且其导数为$\mathbf{a}$.
+		\item 有限实值函数$\R^{\times}\to\R,x\mapsto x^{-1}$在$\R^{\times}$上各点$x_{0}$处都可微,其导数为$x_{0}^{-2}$.
+		\item 绝对值函数$\R\to\R,x\mapsto\left|x\right|$在除了$0$之外的点都可微.
+		\item 函数$\psi:\R\to\R,x\mapsto
+		\begin{cases}
+			0,&x=0\\
+			x\sin\left(\frac{1}{x}\right),&x\neq 0
+		\end{cases}$
+		连续,但是在$0$处既不左可微也不右可微.
+		
+		事实上,我们可以找到一个从$I$到$E$的函数,它在$I$上各点都连续却不可微.
+	\end{enumerate}
+\end{example}
+
+\begin{definition}{导函数,左导函数,右导函数}{}
+	\begin{enumerate}
+		\item 如果$\mathbf{f}$在$I$上各点都可微,则称$\mathbf{f}$在$I$上可微,称$I\to E,x\mapsto\mathbf{f}^{\prime}\left(x\right)$是$\mathbf{f}$的导函数,记作$\mathbf{f}^{\prime},D\mathbf{f}$或$\frac{\mathrm{d}\mathbf{f}}{\mathrm{d}x}$.
+		\item 如果$\mathbf{f}$在$I$上各点都左可微,则称$\mathbf{f}$在$I$上左可微,称$\mathbf{f}_{s}^{\prime}:I\to E,x\mapsto\mathbf{f}_{s}^{\prime}\left(x\right)$是$\mathbf{f}$的左导函数.
+		\item 如果$\mathbf{f}$在$I$上各点都右可微,则称$\mathbf{f}$在$I$上右可微,称$\mathbf{f}_{d}^{\prime}:I\to E,x\mapsto\mathbf{f}_{d}^{\prime}\left(x\right)$是$\mathbf{f}$的右导函数.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}{}{}
+	可以验证:存在从$I$到$E$的函数,它在$I$上各点都可导,但是其导函数不一定在$I$上各点都连续.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+\section{函数乘积的导数}
+
+记号约定:
+\begin{itemize}
+	\item $p\geq 1$,$\left(E_{i}\right)_{i=1}^{p}$是一族Hausdorff的实TVS,$F$是Hausdorff的实TVS,$I$是$\R$中的非退化区间.
+	\item $\left[\cdot,\ldots,\cdot\right]:\prod\limits_{i=1}^{p}E_{i}\to F,\left(\mathbf{x}_{i}\right)_{i=1}^{p}\mapsto\left[\mathbf{x}_{1},\ldots,\mathbf{x}_{p}\right]$是连续$p$重$\R$-线性映射.
+\end{itemize}
+
+\begin{proposition}{}{}
+	设$x_{0}\in I$,$\left(\mathbf{f}_{i}\right)_{i=1}^{n}\in\prod\limits_{i=1}^{n}\Hom_{\mathsf{Set}}\left(I,E_{i}\right)$,其中的每一项在$x_{0}$处都可微.那么
+	\begin{align*}
+		\mathbf{h}:I\to F,x\mapsto\left[\mathbf{f}_{1}\left(x\right),\ldots,\mathbf{f}_{p}\left(x\right)\right]
+	\end{align*}
+	在$x_{0}$处可微,$\mathbf{h}^{\prime}\left(x_{0}\right)=\sum\limits_{i=1}^{p}\left[\mathbf{f}_{1}\left(x_{0}\right),\ldots,\mathbf{f}_{i-1}\left(x_{0}\right),\mathbf{f}_{i}^{\prime}\left(x_{0}\right),\mathbf{f}_{i+1}\left(x_{0}\right),\ldots,f_{p}\left(x_{0}\right)\right]$.
+\end{proposition}
+
+\begin{sketch}{}{}
+	对诸$x\in I$有$\mathbf{h}\left(x\right)-\mathbf{h}\left(x_{0}\right)=\sum\limits_{i=1}^{p}\left[\mathbf{f}_{1}\left(x_{0}\right),\ldots,\mathbf{f}_{i-1}\left(x_{0}\right),\mathbf{f}_{i}\left(x\right)-\mathbf{f}_{i}\left(x_{0}\right),\mathbf{f}_{i+1}\left(x_{0}\right),\ldots,f_{p}\left(x_{0}\right)\right]$,接下来考虑导数的定义,结合$\left[\cdot,\ldots,\cdot\right]$的连续性直接得到结果.
+\end{sketch}
+
+\begin{remark}{}{}
+	\begin{enumerate}
+		\item 如果$1\leq r\leq p,1\leq j_{1}<\ldots<j_{r}\leq p$且$\left(f_{j_{i}}\right)_{i=1}^{r}$中的各项都是常值函数,那么$\mathbf{h}^{\prime}\left(x_{0}\right)$中包含$\left(f_{j_{i}}\left(x_{0}\right)\right)_{i=1}^{r}$中任意一项的项都是$0$.
+		\item 取$p=2$.如果$\mathbf{f}_{1},\mathbf{f}_{2}$在$x_{0}$处都可微,那么$\left[\mathbf{f}_{1},\mathbf{f}_{2}\right]:I\to F,x\mapsto\left[\mathbf{f}_{1}\left(x\right),\mathbf{f}_{2}\left(x\right)\right]$在$x_{0}$处可微,并且
+		\begin{align*}
+			\left[\mathbf{f}_{1},\mathbf{f}_{2}\right]^{\prime}\left(x_{0}\right)=\left[\mathbf{f}_{1}^{\prime}\left(x_{0}\right),\mathbf{f}_{2}\left(x_{0}\right)\right]+\left[\mathbf{f}_{1}\left(x_{0}\right),\mathbf{f}_{2}^{\prime}\left(x_{0}\right)\right].
+		\end{align*}
+		如果$\mathbf{f}_{1},\mathbf{f}_{2}$可微,那么$\left[\mathbf{f}_{1},\mathbf{f}_{2}\right]$可微,并且$\left[\mathbf{f}_{1},\mathbf{f}_{2}\right]^{\prime}=\left[\mathbf{f}_{1}^{\prime},\mathbf{f}_{2}\right]+\left[\mathbf{f}_{1},\mathbf{f}_{2}^{\prime}\right]$.
+	\end{enumerate}
+\end{remark}
+
+\begin{example}{}{}
+	\begin{enumerate}
+		\item 设$f\in\Hom_{\mathsf{Set}}\left(I,\R\right),\mathbf{g}\in\Hom_{\mathsf{Set}}\left(I,E\right)$,二者在$x_{0}$处都可导,则$\mathbf{g}f$在$x_{0}$处可导,并且
+		\begin{align*}
+			\left(\mathbf{g}f\right)^{\prime}\left(x_{0}\right)=\mathbf{g}^{\prime}\left(x_{0}\right)f\left(x_{0}\right)+\mathbf{g}\left(x_{0}\right)f^{\prime}\left(x_{0}\right).
+		\end{align*}
+		进一步的:如果$n\geq 1,\mathbf{f}\in\Hom_{\mathsf{Set}}\left(I,\R^{n}\right)$,对每个$1\leq i\leq n$有$f_{i}=\pr_{i}\circ\mathbf{f}$,那么
+		\begin{center}
+			$\mathbf{f}$可微$\iff$ $\left(f_{i}\right)_{i=1}^{n}$的每一项都可微.
+		\end{center}
+		这是因为,如果$\left(\mathbf{e}_{i}\right)_{i=1}^{n}$是$\R^{n}$的典范基,那么$f=\sum\limits_{i=1}^{n}\mathbf{e}_{i}f_{i}$.
+		\item 设$n\geq 1$,那么$\R\to\R,x\mapsto x^{n}$是连续映射.进一步,如果$\left(\mathbf{a}_{i}\right)_{i=1}^{n}$是$\R^{n}$的元素族,那么多项式函数
+		\begin{align*}
+			I\to\R,x\mapsto\sum\limits_{k=0}^{n}\mathbf{a}_{k}x^{n-k}
+		\end{align*}
+		可微,其导函数为$I\to\R,x\mapsto\sum\limits_{k=0}^{n-1}\left(n-k\right)\mathbf{a}_{k}x^{n-k-1}$.
+		\item 设$n\geq 1$,$\langle\cdot|\cdot\rangle$是$\R^{n}$上的标准内积,$x_{0}\in I,\mathbf{f},\mathbf{g}\in\Hom_{\mathsf{Set}}\left(I,\R^{n}\right)$.如果$f,g$在$x_{0}$处可导,那么
+		\begin{align*}
+			\langle\mathbf{f},\mathbf{g}\rangle:I\to\R^{n},x\mapsto\langle \mathbf{f}\left(x\right)|\mathbf{g}\left(x\right)\rangle
+		\end{align*}
+		在$x_{0}$处可导,其导数为$\langle \mathbf{f}^{\prime}\left(x_{0}\right)|\mathbf{g}\left(x_{0}\right)\rangle+\langle\mathbf{f}\left(x_{0}\right)|\mathbf{g}^{\prime}\left(x_{0}\right)\rangle$.把$\C^{n}$视为$\R$-向量空间,那么我们有类似的论断.
+		
+		
+		特别地,如果$\left\|\cdot\right\|$是$\R^{n}$上的Euclid范数,并且$\exists c\in\R\forall x\in I\left(\left\|\mathbf{f}\left(x\right)\right\|=c\right)$,那么$\langle\mathbf{f}^{\prime}\left(x_{0}\right)|\mathbf{f}\left(x_{0}\right)\rangle=0$.
+		\item 设$E$是$\R$-拓扑代数,$x_{0}\in\R,\mathbf{f},\mathbf{g}\in\Hom_{\mathsf{Set}}\left(I,E\right)$.如果$\mathbf{f},\mathbf{g}$在$x_{0}$处可微,那么
+		\begin{align*}
+			\mathbf{f}\mathbf{g}:I\to E,x\mapsto \mathbf{f}\left(x\right)\mathbf{g}\left(x\right)
+		\end{align*}
+		在$x_{0}$处可微,其导数为$\mathbf{f}^{\prime}\left(x_{0}\right)\mathbf{g}\left(x_{0}\right)+\mathbf{f}\left(x_{0}\right)\mathbf{g}^{\prime}\left(x_{0}\right)$.
+		
+		特别地,如果$n\geq 1$,$\left(\alpha_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$和$\left(\beta_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$是$\Hom_{\mathsf{Set}}\left(I,\R\right)$中的$n$阶方阵,
+		\begin{align*}
+			\bm{A}:I\to\R,x\mapsto\left(\alpha_{ij}\left(x\right)\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}},\\
+			\bm{B}:I\to\R,x\mapsto\left(\beta_{ij}\left(x\right)\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}},
+		\end{align*}
+		并且二者在$x_{0}$处可微,那么$\bm{A}\bm{B}$在$x_{0}$处可微,其导数为$\bm{A}^{\prime}\left(x_{0}\right)\bm{B}\left(x_{0}\right)+\bm{A}\left(x_{0}\right)\bm{B}^{\prime}\left(x_{0}\right)$.
+		\item 行列式映射$\det:\left(\R^{n}\right)^{n}\to\R,(\left(x_{ij}\right)_{j=1}^{n})_{i=1}^{n}\mapsto\det\left(x_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$是$n$重连续$\R$-线性映射.如果
+		\begin{itemize}
+			\item $\left(f_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$是$\Hom_{\mathsf{Set}}\left(I,\R\right)$中一族在$x_{0}$处可微的函数,
+			\item $g:I\to\R,x\mapsto\det\left(f_{ij}\left(x\right)\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$,
+			\item 对每个$1\leq i\leq n$有$\mathbf{g}_{i}:I\to\R^{n},x\mapsto\left(f_{ij}\left(x\right)\right)_{j=1}^{n}$,
+		\end{itemize}
+		那么$g^{\prime}\left(x_{0}\right)=\sum\limits_{i=1}^{n}\det\left(\mathbf{g}_{1}\left(x_{0}\right),\ldots,\mathbf{g}_{i-1}\left(x_{0}\right),\mathbf{g}_{i}^{\prime}\left(x_{0}\right),\ldots,\mathbf{g}_{n}\left(x_{0}\right)\right)$.
+	\end{enumerate}
+\end{example}
+
+\begin{proposition}{Jacobi公式}{}
+	设$\left(u_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$是$\Hom_{\mathsf{Set}}\left(I,\R\right)$的元素族,$x_{0}\in I$.令
+	\begin{gather*}
+		\bm{U}:I\to\R,x\mapsto\left(u_{ij}\left(x\right)\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}},\\
+		\Delta:I\to\R,x\mapsto\det\left(\bm{U}\left(x\right)\right).
+	\end{gather*}
+	若$\left(u_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$的每一项在$x_{0}$处都可微,$\bm{U}\left(x_{0}\right)$可逆,则$\Delta$在$x_{0}$处可微,$\Delta^{\prime}\left(x_{0}\right)=\Delta\left(x_{0}\right)\tr\left(\bm{U}^{\prime}\left(x_{0}\right)\bm{U}^{-1}\left(x_{0}\right)\right)$.
+\end{proposition}
+
+\begin{sketch}{微扰法}{}
+	任取$h\in\R^{\times}$.设$\bm{V}\in\mathbf{M}_{n}\left(\R\right)$满足$\bm{U}\left(x_{0}+h\right)=\bm{U}\left(x_{0}\right)+h\bm{V}$.一方面,
+	\begin{align*}
+		\Delta\left(x_{0}+h\right)=\det\left(\bm{U}\left(x_{0}\right)+hV\right)=\Delta\left(\bm{U}\left(x_{0}\right)\right)\det\left(\bm{I}_{n\times n}+h\bm{V}\bm{U}^{-1}\left(x_{0}\right)\right).
+	\end{align*}
+	另一方面,存在$\lambda_{2},\ldots,\lambda_{n}\in\R$让$\det\left(\bm{I}_{n\times n}+h\bm{V}\bm{U}^{-1}\left(x_{0}\right)\right)=1+h\tr\left(\bm{X}\right)+\sum\limits_{k=2}^{n}\lambda_{k}h^{k}$.由此
+	\begin{align*}
+		\frac{\Delta\left(x_{0}+h\right)-\Delta\left(x_{0}\right)}{h}=\Delta\left(x_{0}\right)\left(\tr\left(\bm{V}\bm{U}^{-1}\left(x_{0}\right)\right)+\sum\limits_{k=2}^{n}\lambda_{k}h^{k}\right),
+	\end{align*}
+	结合导数的定义我们就得到了需要的等式.
+\end{sketch}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
