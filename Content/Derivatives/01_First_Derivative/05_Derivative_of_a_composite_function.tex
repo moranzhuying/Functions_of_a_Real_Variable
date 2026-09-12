@@ -1,0 +1,32 @@
+\section{复合函数的导数}
+
+记号约定:
+\begin{itemize}
+	\item $I,J$是$\R$中的非退化区间,$E$是Hausdorff的实TVS.
+	\item $f\in\Hom_{\mathsf{Set}}\left(I,\R\right),\mathbf{g}\in\Hom_{\mathsf{Set}}\left(J,E\right),\im\left(f\right)\subseteq J$.
+\end{itemize}
+
+\begin{proposition}{复合函数的求导公式}{}
+	设$x_{0}\in I$.若$f$在$x_{0}$处可微,$\mathbf{g}$在$f\left(x_{0}\right)$处可微,则$\mathbf{g}\circ f$在$x_{0}$处可微,其导数为$\mathbf{g}^{\prime}\left(f\left(x_{0}\right)\right)f^{\prime}\left(x_{0}\right)$.
+\end{proposition}
+
+\begin{sketch}{延拓方法}{}
+	记$y_{0}=f\left(x_{0}\right)$.令
+	\begin{align*}
+		\mathbf{v}:J\to E,y\mapsto
+		\begin{cases}
+			\frac{\mathbf{g}\left(y\right)-\mathbf{g}\left(y_{0}\right)}{y-y_{0}},&y\neq y_{0},\\
+			\mathbf{g}^{\prime}\left(y_{0}\right),&y=y_{0}.
+		\end{cases}
+	\end{align*}
+	那么,$\mathbf{g}$在$y_{0}$处的可微性表明$\mathbf{v}$在$y_{0}$处连续.令$\mathbf{h}=\mathbf{g}\circ f,\mathbf{u}=\mathbf{v}\circ f$,则对每个$x\in I\setminus\left\{x_{0}\right\}$有
+	\begin{align*}
+		\frac{\mathbf{h}\left(x\right)-\mathbf{h}\left(x_{0}\right)}{x-x_{0}}=\mathbf{u}\left(x\right)\cdot\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}}.
+	\end{align*}
+	$f$在$x_{0}$处的连续性给出$\limit_{\substack{x\to x_{0}\\ x\in I\setminus\left\{x_{0}\right\}}}\mathbf{u}\left(x\right)=\mathbf{v}\left(f\left(x_{0}\right)\right) = \mathbf{g}^{\prime}\left(f\left(x_{0}\right)\right)$,结合标量乘法 $E\times\R\to E,\left(\mathbf{y},t\right)\mapsto\mathbf{y}t$的连续性,使用导数的定义即得结果.
+\end{sketch}
+
+
+
+
+

@@ -1,0 +1,65 @@
+\section{微分的线性性}
+
+记号约定:$I$是$\R$中的区间,$E,F$是Hausdorff的实TVS.
+
+\begin{proposition}{在某点可微的向量值函数组成向量空间}{}
+	设$x_{0}\in I,V_{x_{0}}=\left\{f\in\Hom_{\mathsf{Set}}\left(I,E\right)\middle|f\text{在}x_{0}\text{处可微}\right\}$,则$V_{x_{0}}$是$\R$-向量空间,$V_{x_{0}}\to E,\mathbf{f}\mapsto \mathbf{f}^{\prime}\left(x_{0}\right)$是$\R$-线性映射.
+\end{proposition}
+
+\begin{sketch}{}{}
+	由TVS的定义,$E$的加法和$\R$在$E$上的标量乘法都连续,由此直接得到结果.
+\end{sketch}
+
+\begin{corollary}{可微函数构成向量空间}{}
+	设$V=\left\{f\in\Hom_{\mathsf{Set}}\left(I,E\right)\middle|f\text{在}I\text{上可微}\right\}$,则$V$是$\R$-向量空间,$V\to\Hom_{\mathsf{Set}}\left(I,E\right),\mathbf{f}\mapsto\mathbf{f}^{\prime}$是$\R$-线性映射.
+\end{corollary}
+
+\begin{remark}{}{}
+	如果为$\Hom_{\mathsf{Set}}\left(I,E\right)$和$V$装备简单收敛(或一致收敛拓扑),那么$V\to\Hom_{\mathsf{Set}}\left(I,E\right),\mathbf{f}\mapsto\mathbf{f}^{\prime}$一般来说不连续.
+\end{remark}
+
+\begin{proposition}{}{}
+	设$\mathbf{u}\in\Hom_{\R-\mathsf{TopMod}}\left(E,F\right),\mathbf{f}\in\Hom_{\mathsf{Set}}\left(I,E\right),x_{0}\in E$.若$\mathbf{f}$在$x_{0}$处可微,则$\mathbf{u}\circ\mathbf{f}$在$x_{0}$处可微,其导数为$\mathbf{u}\left(\mathbf{f}^{\prime}\left(x_{0}\right)\right)$.
+\end{proposition}
+
+\begin{sketch}{}{}
+	对每个$x\in I$有$\frac{\mathbf{u}\left(\mathbf{f}\left(x\right)\right)-\mathbf{u}\left(\mathbf{f}\left(x_{0}\right)\right)}{x-x_{0}}=\mathbf{u}\left(\frac{\mathbf{f}\left(x\right)-\mathbf{f}\left(x_{0}\right)}{x-x_{0}}\right)$,结合$\mathbf{u}$连续直接得到结果.
+\end{sketch}
+
+\begin{corollary}{}{}
+	设$\varphi\in E^{\prime},x_{0}\in E$.如果$\mathbf{f}$在$x_{0}$处可微,那么$\varphi\circ\mathbf{f}$在$x_{0}$处的导数是$\varphi\left(\mathbf{f}^{\prime}\left(x_{0}\right)\right)$.
+\end{corollary}
+
+\begin{example}{}{}
+	\begin{enumerate}
+		\item 设$n\geq 1,\mathbf{f}\in\Hom_{\mathsf{Set}}\left(I,\R^{n}\right),x_{0}\in I$,对每个$1\leq i\leq n$有$f_{i}=\pr_{i}\circ\mathbf{f}$.如果$\mathbf{f}$在$x_{0}$处可微,那么$\left(f_{i}\right)_{i=1}^{n}$中的各项在$x_{0}$处也可微,并且$\mathbf{f}^{\prime}\left(x_{0}\right)=\left(f_{i}^{\prime}\left(x_{0}\right)\right)_{i=1}^{n}$.
+		\item 设$p\in\Hom_{\mathsf{Set}}\left(I,\C\right),a\in\C$.如果$p$在$x_{0}$处可导,那么$ap$在$x_{0}$处可导,其导数为$ap\left(x_{0}\right)$.
+	\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

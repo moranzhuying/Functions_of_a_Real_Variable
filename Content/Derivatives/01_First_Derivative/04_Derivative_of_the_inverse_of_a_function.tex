@@ -1,0 +1,59 @@
+\section{逐点乘法意义下函数的逆的导数}
+
+记号约定:
+\begin{itemize}
+	\item $E$是$\R$-含幺Banach代数,$I$是$\R$中的非退化区间.
+	\item $\mathbf{f}\in\Hom_{\mathsf{Set}}\left(I,E\right),x_{0}\in I,\mathbf{y}_{0}=\mathbf{f}\left(x_{0}\right)$.
+\end{itemize}
+
+\begin{proposition}{}{}
+	设$\mathbf{f}$在$x_{0}$处可微.若$\mathbf{y}_{0}\in E^{\times}$,则$x_{0}$在$I$中有一个邻域$U$使$\dom\left(\frac{1}{\mathbf{f}}\right)=U$,$\frac{1}{\mathbf{f}}$在$x_{0}$处可微,并且
+	\begin{align*}
+		\left(\frac{1}{\mathbf{f}}\right)^{\prime}\left(x_{0}\right)=-\left(\mathbf{f}\left(x_{0}\right)\right)^{-1}\mathbf{f}^{\prime}\left(x_{0}\right)\left(\mathbf{f}\left(x_{0}\right)\right)^{-1}.
+	\end{align*}
+\end{proposition}
+
+\begin{sketch}{}{}
+	首先,在赋范代数$E$中,$E^{\times}$是开集,映射$E^{\times}\to E^{\times},\mathbf{y}\mapsto\mathbf{y}^{-1}$连续,有$\mathbf{f}$在$x_{0}$处的连续性便找到了所需邻域$U$.
+	
+	其次,对每个$x\in I$有$\left(\mathbf{f}\left(x\right)\right)^{-1}-\left(\mathbf{f}\left(x_{0}\right)\right)^{-1}=\left(\mathbf{f}\left(x\right)\right)\left(\mathbf{f}\left(x\right)-\mathbf{f}\left(x_{0}\right)\right)^{-1}\left(\mathbf{f}\left(x_{0}\right)\right)^{-1}$,结合$\frac{1}{\mathbf{f}}$和$E$上的乘法的连续性,使用导数的定义就得到所需要的等式.
+\end{sketch}
+
+\begin{example}{}{}
+	\begin{enumerate}
+		\item 设$E\in\left\{\C,\R\right\}$.当$\mathbf{f}$在$x_{0}$处可微且$\mathbf{y}_{0}\neq 0$时,$\frac{1}{\mathbf{f}}$在$x_{0}$处可微,其导数为$-\mathbf{f}^{\prime}\left(x_{0}\right)\left(\mathbf{f}\left(x_{0}\right)\right)^{-2}$.
+		\item 设$\left(u_{ij}\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$是$\Hom_{\mathsf{Set}}\left(I,\R\right)$中的元素族,其中各项在$x_{0}$处都可微.若$\bm{U}:I\to E,x\mapsto\left(u_{ij}\left(x\right)\right)_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}$满足$\bm{U}\left(x_{0}\right)\in\GL_{n}\left(\R\right)$,则$\frac{1}{\bm{U}}$在$x_{0}$处可微,它在$x_{0}$处的导数是$-\left(\bm{U}\left(x_{0}\right)\right)^{-1}\bm{U}^{\prime}\left(x_{0}\right)\left(\bm{U}\left(x_{0}\right)\right)^{-1}$.
+	\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
